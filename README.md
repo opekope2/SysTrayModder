@@ -18,4 +18,5 @@ Run SysTrayModder.sh and follow instructions.
 - Plasma 5.18.4
 
 **What does it look like in the end?**
-![Preview](preview.png)
+
+![Preview](preview.gif)
