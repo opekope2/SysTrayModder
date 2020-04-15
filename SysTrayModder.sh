@@ -14,10 +14,10 @@ then
     read -r -p "Would you like to run the script nevertheless? (y/N)" response
     if [[ "$response" =~ ^([yY])$ ]]
     then
-        rm -rf $LOCAL_DIR/org.kde.plasma.private.systemtray 2> /dev/null
-        rm -rf $LOCAL_DIR/org.kde.plasma.systemtray 2> /dev/null
-        cp $SYSTEM_DIR/org.kde.plasma.private.systemtray $LOCAL_DIR/
-        cp $SYSTEM_DIR/org.kde.plasma.systemtray $LOCAL_DIR/
+        rm -r $LOCAL_DIR/org.kde.plasma.private.systemtray 2> /dev/null
+        rm -r $LOCAL_DIR/org.kde.plasma.systemtray 2> /dev/null
+        cp -r $SYSTEM_DIR/org.kde.plasma.private.systemtray $LOCAL_DIR/
+        cp -r $SYSTEM_DIR/org.kde.plasma.systemtray $LOCAL_DIR/
         sed -i '/import QtQuick.Layouts 1.12/ s/$/\nimport QtQuick.Window 2.2/' $LOCAL_DIR/contents/ui/ExpandedRepresentation.qml
         sed -i 's/Layout.minimumHeight: units.gridUnit \* 21/Layout.minimumHeight: Screen.desktopAvailableHeight/' $LOCAL_DIR/contents/ui/ExpandedRepresentation.qml
         sed -i '/import QtQuick.Layouts 1.1/ s/$/\nimport QtQuick.Window 2.2/' $LOCAL_DIR/contents/ui/main.qml
