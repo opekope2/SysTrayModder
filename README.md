@@ -16,3 +16,6 @@ Run SysTrayModder.sh and follow instructions.
 **Currently tested on:**
 
 - Plasma 5.18.4
+
+**What does it look like in the end?**
+![Preview](preview.png)
