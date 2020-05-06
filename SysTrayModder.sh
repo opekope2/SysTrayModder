@@ -1,31 +1,12 @@
 #!/bin/bash
 
-:'
-    SysTrayModder - Modify the Plasma system tray to make it look and 
-    behave as a sidebar.
-    Copyright (C) 2020  William Franco Abdul Hai
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-'
-
 ## Variables
 LOCAL_DIR=~/.local/share/plasma/plasmoids
 SYSTEM_DIR=/usr/share/plasma/plasmoids
-versions=(5.18.4)
+versions=(5.18.4 5.18.5)
 
 ## Functions
-PLASMA_VERSION=$(plasmashell --version | cut -c15,16,17,18)
+PLASMA_VERSION=$(plasmashell --version | cut -c13,14,15,16,17,18)
 MOD_TRAY () {
     #remove existing(if exists) user-modded systemtray.
     rm -rf $LOCAL_DIR/org.kde.plasma.private.systemtray 2> /dev/null
@@ -50,7 +31,7 @@ MOD_TRAY () {
         sed -i 's/location: plasmoid.location/location: PlasmaCore.Types.RightEdge/1' $LOCAL_DIR/org.kde.plasma.private.systemtray/contents/ui/main.qml
         sed -i '/id: dialog/ s/$/\n        x: Screen.desktopAvailableWidth - dialog.width/' $LOCAL_DIR/org.kde.plasma.private.systemtray/contents/ui/main.qml
     fi
-    #resatart bar if requested.
+    #restart bar if requested.
     read -r -p "Systemtray successfully modified, to actually use the edited systemtray, your panel/bar/dock needs to be restarted, would you like to do that now? (Y/n)" response
     if [[ "$response" =~ ^([nN])$ ]]
     then
@@ -67,7 +48,7 @@ MOD_TRAY () {
 }
 
 ## Script logic
-if [ $PLASMA_VERSION != 18.4 ]
+if [[ ! ${versions[@]} =~ $PLASMA_VERSION ]]
 then
     echo Unsupported version of plasma.
     echo Currently supported versions of plasma:
