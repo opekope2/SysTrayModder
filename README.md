@@ -26,4 +26,4 @@ Run SysTrayModder.sh and follow instructions.
 
 **What does it look like in the end?**
 
-![Preview](preview.gif)
+<p align="center"><img src="preview.gif" alt="Preview" height="700px"></p>
