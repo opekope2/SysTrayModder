@@ -58,8 +58,8 @@ then
     then
         MOD_TRAY
         echo It seems you\'ve run the script with an unsuported version of plasma, if the new systemtray widget does not work as intended, simply remove the following folders:
-        echo $SYSTEM_DIR/org.kde.plasma.private.systemtray
-        echo $SYSTEM_DIR/org.kde.plasma.systemtray
+        echo $LOCAL_DIR/org.kde.plasma.private.systemtray
+        echo $LOCAL_DIR/org.kde.plasma.systemtray
     else
         exit
     fi
