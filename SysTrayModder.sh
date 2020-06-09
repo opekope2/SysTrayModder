@@ -3,7 +3,7 @@
 ## Variables
 LOCAL_DIR=~/.local/share/plasma/plasmoids
 SYSTEM_DIR=/usr/share/plasma/plasmoids
-versions=(5.18.4 5.18.5)
+versions=(5.18.4 5.18.5 5.19.0)
 
 ## Functions
 PLASMA_VERSION=$(plasmashell --version | cut -c13,14,15,16,17,18)
