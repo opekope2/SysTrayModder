@@ -2,6 +2,8 @@
 
 <p align="center">Script to make the Plasma system tray behave like a sidebar.</p> 
 
+Hasn't been tested against latest versions of Plasma, use at your own risk.
+
 **What does this script do?**
 
 Copies your preexisting system tray widget that comes bundled with Plasma, and edits it so that the height of the tray takes up the entire available vertical space, and makes it so that the tray pops out from either side of the screen.
