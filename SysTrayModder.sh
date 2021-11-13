@@ -3,7 +3,7 @@
 ## Variables
 LOCAL_DIR=~/.local/share/plasma/plasmoids
 SYSTEM_DIR=/usr/share/plasma/plasmoids
-versions=(5.18.4 5.18.5 5.19.0)
+versions=(5.18.4 5.18.5 5.19.0 5.22.5 5.23.3)
 
 ## Functions
 PLASMA_VERSION=$(plasmashell --version | cut -c13,14,15,16,17,18)
@@ -17,6 +17,7 @@ MOD_TRAY () {
     #general modifications to tray that are required for both left and right configurations.
     sed -i '/import QtQuick.Layouts 1.12/ s/$/\nimport QtQuick.Window 2.2/' $LOCAL_DIR/org.kde.plasma.private.systemtray/contents/ui/ExpandedRepresentation.qml
     sed -i 's/Layout.minimumHeight: units.gridUnit \* 21/Layout.minimumHeight: Screen.desktopAvailableHeight/' $LOCAL_DIR/org.kde.plasma.private.systemtray/contents/ui/ExpandedRepresentation.qml
+    sed -i 's/readonly property int defaultHeight: PlasmaCore.Units.gridUnit \* 24/readonly property int defaultHeight: Screen.desktopAvailableHeight/' $LOCAL_DIR/org.kde.plasma.private.systemtray/contents/ui/ExpandedRepresentation.qml
     sed -i '/import QtQuick.Layouts 1.1/ s/$/\nimport QtQuick.Window 2.2/' $LOCAL_DIR/org.kde.plasma.private.systemtray/contents/ui/main.qml
     sed -i 's/visualParent: root//g' $LOCAL_DIR/org.kde.plasma.private.systemtray/contents/ui/main.qml
     sed -i 's/up-arrow/left-arrow/g' $LOCAL_DIR/org.kde.plasma.private.systemtray/contents/ui/ExpanderArrow.qml
