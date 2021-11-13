@@ -12,6 +12,7 @@ MOD_TRAY () {
     rm -rf $LOCAL_DIR/org.kde.plasma.private.systemtray 2> /dev/null
     rm -rf $LOCAL_DIR/org.kde.plasma.private.systemtray 2> /dev/null
     #copy system systemtray to user dir.
+    mkdir -p $LOCAL_DIR
     cp -r $SYSTEM_DIR/org.kde.plasma.private.systemtray $LOCAL_DIR/
     cp -r $SYSTEM_DIR/org.kde.plasma.systemtray $LOCAL_DIR/
     #general modifications to tray that are required for both left and right configurations.
