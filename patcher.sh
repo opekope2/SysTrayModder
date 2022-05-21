@@ -24,7 +24,7 @@ process_reload () {
 }
 
 usage () {
-    echo -e "Usage:\t$script <plasma> <left|right> [--reload-plasma] [--reload-latte]"
+    echo -e "Usage:\t$script <plasma|nitrux> <left|right> [--reload-plasma] [--reload-latte]"
     exit
 }
 
@@ -39,6 +39,8 @@ fi
 
 if [ "$tray" == "plasma" ]; then
     prepare_local_dir org.kde.plasma
+elif [ "$tray" == "nitrux" ]; then
+    prepare_local_dir org.nx
 else
     usage
 fi
